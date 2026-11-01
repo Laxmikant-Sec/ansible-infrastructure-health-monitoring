@@ -1,0 +1,26 @@
+# Internal infrastructure reports
+health-report.txt
+
+# SSH private keys
+id_rsa
+id_ed25519
+*.pem
+*.key
+
+# Ansible credentials and secrets
+*.vault
+vault.yml
+secrets.yml
+credentials.yml
+
+# Ansible retry files
+*.retry
+
+# Temporary editor files
+*~
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc

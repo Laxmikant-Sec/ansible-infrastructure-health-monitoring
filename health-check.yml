@@ -1,0 +1,14 @@
+---
+- name: Check Ubuntu Server disk health
+  hosts: ubuntu_servers
+  gather_facts: false
+
+  tasks:
+    - name: Check disk space
+      ansible.builtin.command: df -h /
+      register: disk_result
+      changed_when: false
+
+    - name: Display disk usage
+      ansible.builtin.debug:
+        var: disk_result.stdout_lines

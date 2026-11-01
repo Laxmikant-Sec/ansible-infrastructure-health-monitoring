@@ -1,0 +1,9 @@
+---
+- name: Check Ubuntu Server information
+  hosts: ubuntu_servers
+  gather_facts: true
+
+  tasks:
+    - name: Display operating system
+      ansible.builtin.debug:
+        msg: "Operating System: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"

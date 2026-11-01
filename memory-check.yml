@@ -1,0 +1,15 @@
+---
+- name: Check Ubuntu Server memory
+  hosts: ubuntu_servers
+  gather_facts: false
+
+  tasks:
+    - name: Check memory usage
+      ansible.builtin.command: free -h
+      register: memory_result
+      changed_when: false
+
+    - name: Display memory usage
+      ansible.builtin.debug:
+        var: memory_result.stdout_lines
+

@@ -1,0 +1,14 @@
+---
+- name: Check Ubuntu Server CPU
+  hosts: ubuntu_servers
+  gather_facts: false
+
+  tasks:
+    - name: Collect CPU information
+      ansible.builtin.command: lscpu
+      register: cpu_result
+      changed_when: false
+
+    - name: Display CPU information
+      ansible.builtin.debug:
+        var: cpu_result.stdout_lines
