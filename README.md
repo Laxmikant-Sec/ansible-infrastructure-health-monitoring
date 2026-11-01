@@ -27,7 +27,7 @@ Server virtual machine running on Proxmox VE.
 - memory-check.yml - RAM and swap monitoring
 - cpu-check.yml - CPU information
 - infrastructure-health.yml - Combined health checks
-- health-report.txt - Saved execution results
+- health-report.txt - Local execution report (excluded from GitHub)
 
 ## How to Run
 ansible-playbook -i inventory.ini infrastructure-health.yml
